@@ -11,6 +11,15 @@ exports.findAllPlaces = function(req, res){
   });
 };
 
+//GET - Return a place the DB
+exports.findByIdPlace = function(req, res){
+  Place.findById(req.params.id)
+  .populate('category').exec(function(err, category){
+    if(err) return res.send(500, err.message);
+    res.status(200).jsonp(category);
+  });
+};
+
 //ADD a place in the DB
 exports.addPlace = function(req, res){
   console.log('POST /addPlace/');

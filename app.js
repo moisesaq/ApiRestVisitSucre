@@ -36,6 +36,9 @@ controller.route('/places')
 .get(PlaceController.findAllPlaces)
 .post(PlaceController.addPlace);
 
+controller.route('/places/:id')
+.get(PlaceController.findByIdPlace);
+
 app.use('/api', controller);
 
 

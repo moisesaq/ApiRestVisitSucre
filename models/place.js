@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var Category = mongoose.model('Category');
 
 var placeSchema = new Schema({
-  code: {tyep: String},
+  code: {type: String},
   name: { type: String },
   address: { type: String },
   latitude: {type: String},
