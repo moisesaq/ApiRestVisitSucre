@@ -10,6 +10,7 @@ var placeSchema = new Schema({
   longitude: {type: String},
   description: { type: String},
   pathImage:[{ type: String}],
+  date: {type: String},
   category: {type: Schema.ObjectId, ref: "Category" }
 });
 

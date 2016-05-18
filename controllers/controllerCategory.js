@@ -17,7 +17,10 @@ exports.addCategory = function(req, res){
   console.log(req.body);
    var category = new Category({
      code: req.body.code,
-     name: req.body.name
+     logo: req.body.logo,
+     name: req.body.name,
+     date: req.body.date,
+     description: req.body.description
    });
 
    category.save(function(err, category){

@@ -32,6 +32,7 @@ exports.addPlace = function(req, res){
      longitude: req.body.longitude,
      description: req.body.description,
      pathImage: req.body.pathImage,
+     date: req.body.date,
      category: req.body.category
    });
 
