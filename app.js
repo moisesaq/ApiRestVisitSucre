@@ -34,6 +34,7 @@ controller.route('/categories')
 
 controller.route('/places')
 .get(PlaceController.findAllPlaces)
+.post(PlaceController.findByNamePlace)
 .post(PlaceController.addPlace);
 
 controller.route('/places/:id')

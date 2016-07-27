@@ -20,6 +20,17 @@ exports.findByIdPlace = function(req, res){
   });
 };
 
+//RETURN A PLACE FIND FOR name
+exports.findByNamePlace = function(req, res){
+  console.log("Find by name "+req.params.name);
+  
+  Place.find({"name": req.params.name})
+  .populate('category').exec(function(error, place){
+    if(error) return res.send(500, err.message);
+    res.status(200).jsonp(place);
+  });
+}
+
 //ADD a place in the DB
 exports.addPlace = function(req, res){
   console.log('POST /addPlace/');
