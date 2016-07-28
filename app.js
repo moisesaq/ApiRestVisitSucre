@@ -44,7 +44,6 @@ controller.route('/places/:id')
 
 app.use('/api', controller);
 
-
 //Start server in IP: 192.168.1.42 in the PORT: 3000
 app.listen(3000, '192.168.1.42',function(){
     console.log('Node server running on localhost in port 3000');

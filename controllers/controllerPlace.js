@@ -22,7 +22,7 @@ exports.findByIdPlace = function(req, res){
 
 //RETURN A PLACE FIND FOR name
 exports.findByNamePlace = function(req, res){
-  console.log("Find by name "+req.body.name);
+  console.log("Find by name " + req.body.name);
   Place.find({"name": req.body.name})
   .populate('category').exec(function(error, place){
     if(error) return res.send(500, err.message);
