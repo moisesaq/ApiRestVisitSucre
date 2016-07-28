@@ -26,7 +26,7 @@ exports.findByNamePlace = function(req, res){
   Place.find({"name": req.body.name})
   .populate('category').exec(function(error, place){
     if(error) return res.send(500, err.message);
-    res.status(200).jsonp(place);
+    res.status(200).json({"data":place});
   });
 }
 

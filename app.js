@@ -30,6 +30,8 @@ controller.route('/categories')
 .get(CategoryController.findAllCategories)
 .post(CategoryController.addCategory);
 
+controller.route('/category/find')
+.post(CategoryController.findByNameCategory);
 //var controllerPlace = express.Router();
 
 controller.route('/places')

@@ -11,6 +11,15 @@ exports.findAllCategories = function(req, res){
   });
 };
 
+exports.findByNameCategory = function(req, res){
+  var find_name = req.headers['name'];
+  console.log("Find cateory by " + find_name);
+  Category.find({"name": find_name}).exec(function(err, categories){
+    if(err) res.send(500, err.message);
+    res.status(200).jsonp(categories);
+  });
+};
+
 //ADD a category in the DB
 exports.addCategory = function(req, res){
   console.log('POST /addCategory/');
