@@ -33,6 +33,6 @@ exports.addCategory = function(req, res){
 
    category.save(function(err, category){
      if(err) return res.status(500).send(err.message);
-     res.status(200).jsonp(category);
+     res.status(200).jsonp({status:1, category:category});
    });
 };
