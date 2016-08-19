@@ -7,7 +7,7 @@ exports.findAllCategories = function(req, res){
     if(err) res.send(500, err.message);
 
     console.log('GET /categories');
-    res.status(200).jsonp(status:1, categories:categories);
+    res.status(200).jsonp({status:1, categories:categories});
   });
 };
 
@@ -16,7 +16,7 @@ exports.findByNameCategory = function(req, res){
   console.log("Find cateory by " + find_name);
   Category.find({"name": find_name}).exec(function(err, categories){
     if(err) res.send(500, err.message);
-    res.status(200).jsonp(status:1, category:category);
+    res.status(200).jsonp({status:1, category:category});
   });
 };
 

@@ -7,7 +7,7 @@ exports.findAllPlaces = function(req, res){
     if(err) res.send(500, err.message);
 
     console.log('GET /places');
-    res.status(200).jsonp(places);
+    res.status(200).jsonp({status:1, places:places});
   });
 };
 
@@ -16,7 +16,7 @@ exports.findByIdPlace = function(req, res){
   Place.findById(req.params.id)
   .populate('category').exec(function(err, category){
     if(err) return res.send(500, err.message);
-    res.status(200).jsonp(category);
+    res.status(200).jsonp({status:1, place:place});
   });
 };
 
@@ -26,7 +26,7 @@ exports.findByNamePlace = function(req, res){
   Place.find({"name": req.body.name})
   .populate('category').exec(function(error, place){
     if(error) return res.send(500, err.message);
-    res.status(200).json({"data":place});
+    res.status(200).json({status:1, place:place});
   });
 }
 
@@ -47,6 +47,6 @@ exports.addPlace = function(req, res){
 
    place.save(function(err, place){
      if(err) return res.status(500).send(err.message);
-     res.status(200).jsonp(place);
+     res.status(200).jsonp({status:1, place:place});
    });
 };
