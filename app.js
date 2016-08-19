@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 //Connection to DB
-mongoose.connect('mongodb://localhost/dbVisitSucre', function(err, res){
+mongoose.connect('mongodb://localhost/DBVisitSucre', function(err, res){
   if(err){
     console.log('ERROR: connecting to DataBase. ' + err);
   }else{

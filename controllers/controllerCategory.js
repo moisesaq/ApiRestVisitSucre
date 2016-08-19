@@ -25,7 +25,6 @@ exports.addCategory = function(req, res){
   console.log('POST /addCategory/');
   console.log(req.body);
    var category = new Category({
-     code: req.body.code,
      logo: req.body.logo,
      name: req.body.name,
      date: req.body.date,

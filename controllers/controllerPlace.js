@@ -35,7 +35,6 @@ exports.addPlace = function(req, res){
   console.log('POST /addPlace/');
   console.log(req.body);
    var place = new Place({
-     code: req.body.code,
      name: req.body.name,
      address: req.body.address,
      latitude: req.body.latitude,
