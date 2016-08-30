@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
-var Place = mongoose.model('Place')
+var Place = mongoose.model('Place');
 
 var imageSchema = new Schema({
 	path: {type: String},
