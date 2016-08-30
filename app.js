@@ -24,6 +24,9 @@ var CategoryController = require('./controllers/controllerCategory');
 var Place = require('./models/place');
 var PlaceController = require('./controllers/controllerPlace');
 
+var Image = require('./models/image');
+var ImageController = require('./controllers/controllerImage');
+
 //API router for handling Data Base
 var controller = express.Router();
 controller.route('/categories')
@@ -43,6 +46,10 @@ controller.route('/place/find')
 
 controller.route('/places/:id')
 .get(PlaceController.findByIdPlace);
+
+controller.route('/images')
+.get(ImageController.findAllImages)
+.post(ImageController.addImage);
 
 app.use('/api', controller);
 

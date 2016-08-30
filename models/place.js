@@ -8,7 +8,6 @@ var placeSchema = new Schema({
   latitude: {type: String},
   longitude: {type: String},
   description: { type: String},
-  pathImage:[{ type: String}],
   date: {type: String},
   category: {type: Schema.ObjectId, ref: "Category" }
 });

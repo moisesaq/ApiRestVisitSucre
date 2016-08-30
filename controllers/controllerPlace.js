@@ -1,13 +1,16 @@
 var mongoose = require('mongoose');
 var Place = mongoose.model('Place');
+var Category = mongoose.model('Category');
+var Image = mongoose.model('Image');
 
 //GET - Return all places in the DB Visit Sucre
 exports.findAllPlaces = function(req, res){
-  Place.find(function(err, places){
-    if(err) res.send(500, err.message);
-
-    console.log('GET /places');
-    res.status(200).jsonp({status:1, places:places});
+  Place.find({}, function(err, places){
+    Image.populate(places, {path: 'image'}, function(err, places){
+      if(err) res.send(500, err.message);
+      console.log('GET /places');
+      res.status(200).jsonp({status:1, places:places});
+    });
   });
 };
 
