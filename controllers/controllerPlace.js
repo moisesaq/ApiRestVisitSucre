@@ -4,10 +4,10 @@ var Place = mongoose.model('Place');
 //GET - Return all places in the DB Visit Sucre
 exports.findAllPlaces = function(req, res){
   Place.find({})
-    .populate('image')
     .populate('category').exec(function(err, places){
       if(err) res.send(500, err.message);
       console.log('GET /places');
+
       res.status(200).jsonp({status:1, places:places});
     });
 };

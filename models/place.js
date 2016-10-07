@@ -9,7 +9,7 @@ var placeSchema = new Schema({
   longitude: {type: String},
   description: { type: String},
   date: {type: String},
-  category: {type: Schema.ObjectId, ref: "Category" }
+  category: {type: Schema.ObjectId, ref: "Category" },
 });
 
 module.exports = mongoose.model('Place', placeSchema);
